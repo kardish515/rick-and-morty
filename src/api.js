@@ -2,7 +2,7 @@ class ApiCall{
   getData(userInput, displayData){
     let promise = new Promise(function(resolve, reject){
       let request = new XMLHttpRequest();
-      let url = `https://github.com/kardish515/template`;
+      let url = `https://rickandmortyapi.com/api/character`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
