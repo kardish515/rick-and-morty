@@ -1,8 +1,8 @@
 class ApiCall{
-  getData(userInput, displayData){
+  getData(displayData, id){
     let promise = new Promise(function(resolve, reject){
       let request = new XMLHttpRequest();
-      let url = `https://rickandmortyapi.com/api/character`;
+      let url = `https://rickandmortyapi.com/api/character/${id}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
@@ -17,7 +17,6 @@ class ApiCall{
       displayData(results)
       }, function(error) {
         return `something went wrong ${error.message}`;
-      }
     });
   }
 }
